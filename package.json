@@ -1,0 +1,18 @@
+{
+  "name": "destiny",
+  "version": "1.0.0",
+  "description": "An analysis of Star Wars: Destiny cards and decks.",
+  "author": "Frank Albenesius",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-unfetch": "^2.0.0",
+    "next": "^4.1.4",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
