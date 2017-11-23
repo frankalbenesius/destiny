@@ -142,8 +142,10 @@ export default class CharacterTable extends React.Component {
             <tr key={character.id}>
               <td>{character.is_elite ? 'E' : ''}</td>
               <td>
-                {character.name}
-                {character.is_unique ? '*' : ''}
+                <a href={`https://swdestinydb.com/card/${character.code}`}>
+                  {character.name}
+                  {character.is_unique ? '*' : ''}
+                </a>
               </td>
               <td>{character.subtitle}</td>
               <td>{character.set_code}</td>
