@@ -65,32 +65,90 @@ export default class CharacterTable extends React.Component {
         `}</style>
         <thead>
           <tr>
-            <th title="Elite" onClick={this.handleSort} data-sort="is_elite">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'is_elite' ? 'underline' : 'none',
+              }}
+              title="Elite"
+              onClick={this.handleSort}
+              data-sort="is_elite"
+            >
               E
             </th>
-            <th title="Name" onClick={this.handleSort} data-sort="name">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'name' ? 'underline' : 'none',
+              }}
+              title="Name"
+              onClick={this.handleSort}
+              data-sort="name"
+            >
               Name
             </th>
-            <th title="Subtitle" onClick={this.handleSort} data-sort="subtitle">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'subtitle' ? 'underline' : 'none',
+              }}
+              title="Subtitle"
+              onClick={this.handleSort}
+              data-sort="subtitle"
+            >
               Subtitle
             </th>
-            <th title="Set" onClick={this.handleSort} data-sort="set_name">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'set_name' ? 'underline' : 'none',
+              }}
+              title="Set"
+              onClick={this.handleSort}
+              data-sort="set_name"
+            >
               Set
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'faction_name'
+                    ? 'underline'
+                    : 'none',
+              }}
               title="Faction"
               onClick={this.handleSort}
               data-sort="faction_name"
             >
               F
             </th>
-            <th title="Points" onClick={this.handleSort} data-sort="points">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'points' ? 'underline' : 'none',
+              }}
+              title="Points"
+              onClick={this.handleSort}
+              data-sort="points"
+            >
               P
             </th>
-            <th title="Health" onClick={this.handleSort} data-sort="health">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'health' ? 'underline' : 'none',
+              }}
+              title="Health"
+              onClick={this.handleSort}
+              data-sort="health"
+            >
               H
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'hpp' ? 'underline' : 'none',
+              }}
               title="Health Per Point"
               onClick={this.handleSort}
               data-sort="hpp"
@@ -98,16 +156,32 @@ export default class CharacterTable extends React.Component {
               HPP
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'dpp' ? 'underline' : 'none',
+              }}
               title="Dice Per Point"
               onClick={this.handleSort}
               data-sort="dpp"
             >
               DPP
             </th>
-            <th title="Damage Sides" onClick={this.handleSort} data-sort="ds">
+            <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'ds' ? 'underline' : 'none',
+              }}
+              title="Damage Sides"
+              onClick={this.handleSort}
+              data-sort="ds"
+            >
               Ds
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'dspp' ? 'underline' : 'none',
+              }}
               title="Damage Sides Per Point"
               onClick={this.handleSort}
               data-sort="dspp"
@@ -115,6 +189,10 @@ export default class CharacterTable extends React.Component {
               DsPP
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'diceSum' ? 'underline' : 'none',
+              }}
               title="Sum & Average of Dice Sides"
               onClick={this.handleSort}
               data-sort="diceSum"
@@ -122,6 +200,10 @@ export default class CharacterTable extends React.Component {
               Dice Sum
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'diceDmgSum' ? 'underline' : 'none',
+              }}
               title="Sum & Average of Damage Sides"
               onClick={this.handleSort}
               data-sort="diceDmgSum"
@@ -129,6 +211,12 @@ export default class CharacterTable extends React.Component {
               Damage Sum
             </th>
             <th
+              style={{
+                textDecoration:
+                  this.state.attribute === 'diceDmgSumPP'
+                    ? 'underline'
+                    : 'none',
+              }}
               title="Damage Sum Per Point"
               onClick={this.handleSort}
               data-sort="diceDmgSumPP"
