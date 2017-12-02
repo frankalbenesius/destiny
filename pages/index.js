@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { fetchCharacters } from '../modules/api'
+import { fetchCharacters, getStoredCharacters } from '../modules/api'
 
 import Wrapper from '../components/Wrapper'
 
@@ -10,6 +10,9 @@ export default class IndexPage extends React.Component {
     isFetching: true,
   }
   async componentDidMount() {
+    this.setState({
+      characters: getStoredCharacters() || [],
+    })
     const characters = await fetchCharacters()
     this.setState({
       characters: characters,
@@ -17,10 +20,16 @@ export default class IndexPage extends React.Component {
     })
   }
   render() {
-    if (this.state.isFetching) return <div>fetching cards...</div>
+    if (this.state.characters.length < 1) {
+      return (
+        <Wrapper>
+          <p>fetching cards...</p>
+        </Wrapper>
+      )
+    }
     return (
       <Wrapper>
-        <p>test</p>
+        <p>characters: {this.state.characters.length}</p>
       </Wrapper>
     )
   }
