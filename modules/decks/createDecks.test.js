@@ -42,7 +42,7 @@ test('createAffiliationTest', assert => {
   const emptyDeckEligiblity = emptyDeckAffiliationTest(anyCard)
   const emptyDeckMessage =
     'should allow a card of any affiliation if the deck is empty'
-  assert.false(emptyDeckEligiblity, emptyDeckMessage)
+  assert.true(emptyDeckEligiblity, emptyDeckMessage)
 
   assert.end()
 })
