@@ -3,7 +3,7 @@ import test from 'tape'
 import createEligibilityTest from './'
 
 test('createEligibilityTest', assert => {
-  const deck = [
+  const squad = [
     {
       affiliation_code: 'hero',
       points: 6,
@@ -17,7 +17,7 @@ test('createEligibilityTest', assert => {
       name: 'Maggie',
     },
   ]
-  const test = createEligibilityTest(deck)
+  const test = createEligibilityTest(squad)
 
   const card = {
     affiliation_code: 'villain',
@@ -30,7 +30,7 @@ test('createEligibilityTest', assert => {
 })
 
 test('createEligibilityTest', assert => {
-  const deck = [
+  const squad = [
     {
       affiliation_code: 'hero',
       points: 6,
@@ -44,7 +44,7 @@ test('createEligibilityTest', assert => {
       name: 'Maggie',
     },
   ]
-  const test = createEligibilityTest(deck)
+  const test = createEligibilityTest(squad)
 
   const card = {
     affiliation_code: 'hero',

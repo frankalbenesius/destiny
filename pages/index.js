@@ -2,6 +2,7 @@ import React from 'react'
 
 import { fetchCharacters, getStoredCharacters } from '../modules/api'
 
+import Squad from '../components/Squad'
 import Wrapper from '../components/Wrapper'
 
 export default class IndexPage extends React.Component {
@@ -27,9 +28,12 @@ export default class IndexPage extends React.Component {
         </Wrapper>
       )
     }
+    const squadA = this.state.characters.slice(0, 4)
+    const squadB = this.state.characters.slice(12, 14)
     return (
       <Wrapper>
-        <p>characters: {this.state.characters.length}</p>
+        <Squad squad={squadA} />
+        <Squad squad={squadB} />
       </Wrapper>
     )
   }

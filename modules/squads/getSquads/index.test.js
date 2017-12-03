@@ -1,14 +1,14 @@
 import test from 'tape'
 
-import getDecks from './'
+import getSquads from './'
 
-test('getDecks', assert => {
-  const isArray = Array.isArray(getDecks())
-  assert.true(isArray, 'getDecks should return an array')
+test('getSquads', assert => {
+  const isArray = Array.isArray(getSquads())
+  assert.true(isArray, 'getSquads should return an array')
   assert.end()
 })
 
-test('getDecks', assert => {
+test('getSquads', assert => {
   const eDarth = {
     name: 'Darth Vader',
     is_unique: true,
@@ -22,17 +22,17 @@ test('getDecks', assert => {
     affiliation_code: 'villain',
   }
   const characters = [{ ...eDarth }, { ...darth }]
-  const actual = getDecks(characters)
+  const actual = getSquads(characters)
   const expected = [[{ ...eDarth }], [{ ...darth }]]
   assert.deepEqual(
     actual,
     expected,
-    'getDecks should combine characters into unique eligible decks',
+    'getSquads should combine characters into unique eligible decks',
   )
   assert.end()
 })
 
-test('getDecks', assert => {
+test('getSquads', assert => {
   const trooper = {
     name: 'Death Trooper',
     is_unique: false,
@@ -40,17 +40,17 @@ test('getDecks', assert => {
     affiliation_code: 'villain',
   }
   const characters = [{ ...trooper }]
-  const actual = getDecks(characters)
+  const actual = getSquads(characters)
   const expected = [[{ ...trooper }, { ...trooper }, { ...trooper }]]
   assert.deepEqual(
     actual,
     expected,
-    'getDecks should combine characters into unique eligible decks',
+    'getSquads should combine characters into unique eligible decks',
   )
   assert.end()
 })
 
-test('getDecks', assert => {
+test('getSquads', assert => {
   const eDarth = {
     name: 'Darth Vader',
     is_unique: true,
@@ -76,7 +76,7 @@ test('getDecks', assert => {
     affiliation_code: 'hero',
   }
   const characters = [{ ...eDarth }, { ...darth }, { ...trooper }, { ...hired }]
-  const actual = getDecks(characters)
+  const actual = getSquads(characters)
   const expected = [
     [{ ...eDarth }],
     [{ ...darth }, { ...trooper }],
@@ -86,7 +86,7 @@ test('getDecks', assert => {
   assert.deepEqual(
     actual,
     expected,
-    'getDecks should combine characters into unique eligible decks',
+    'getSquads should combine characters into unique eligible decks',
   )
   assert.end()
 })

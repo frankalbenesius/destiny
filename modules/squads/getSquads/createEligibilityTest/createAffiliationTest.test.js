@@ -3,37 +3,37 @@ import test from 'tape'
 import createAffiliationTest from './createAffiliationTest'
 
 test('createAffiliationTest', assert => {
-  const villainDeck = [
+  const villainsquad = [
     {
       affiliation_code: 'villain',
     },
   ]
-  const villainAffiliationTest = createAffiliationTest(villainDeck)
+  const villainAffiliationTest = createAffiliationTest(villainsquad)
 
   const villainCard = { affiliation_code: 'villain' }
   assert.true(
     villainAffiliationTest(villainCard),
-    'should accept a villain card in a villain deck',
+    'should accept a villain card in a villain squad',
   )
 
   const heroCard = { affiliation_code: 'hero' }
   assert.false(
     villainAffiliationTest(heroCard),
-    'should deny a hero card in a villain deck',
+    'should deny a hero card in a villain squad',
   )
 
   const neutralCard = { affiliation_code: 'neutral' }
   assert.true(
     villainAffiliationTest(neutralCard),
-    'should accept a neutral card in a villain deck',
+    'should accept a neutral card in a villain squad',
   )
 
-  const emptyDeck = []
-  const emptyDeckAffiliationTest = createAffiliationTest(emptyDeck)
+  const emptysquad = []
+  const emptysquadAffiliationTest = createAffiliationTest(emptysquad)
   const anyCard = { affiliation_code: 'anything!' }
   assert.true(
-    emptyDeckAffiliationTest(anyCard),
-    'should allow a card of any affiliation if the deck is empty',
+    emptysquadAffiliationTest(anyCard),
+    'should allow a card of any affiliation if the squad is empty',
   )
 
   assert.end()
