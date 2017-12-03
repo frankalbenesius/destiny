@@ -19,30 +19,33 @@ test('createAffiliationTest', assert => {
       affiliation_code: 'villain',
     },
   ]
-  const affiliationTest = createAffiliationTest(villainDeck)
+  const villainAffiliationTest = createAffiliationTest(villainDeck)
 
   const villainCard = { affiliation_code: 'villain' }
-  const villainCardEligibility = affiliationTest(villainCard)
-  const villainCardMessage = 'should accept a villain card in a villain deck'
-  assert.true(villainCardEligibility, villainCardMessage)
+  assert.true(
+    villainAffiliationTest(villainCard),
+    'should accept a villain card in a villain deck',
+  )
 
   const heroCard = { affiliation_code: 'hero' }
-  const heroCardEligibility = affiliationTest(heroCard)
-  const heroCardMessage = 'should deny a hero card in a villain deck'
-  assert.false(heroCardEligibility, heroCardMessage)
+  assert.false(
+    villainAffiliationTest(heroCard),
+    'should deny a hero card in a villain deck',
+  )
 
   const neutralCard = { affiliation_code: 'neutral' }
-  const neutralCardEligibility = affiliationTest(neutralCard)
-  const neutralCardMessage = 'should accept a neutral card in a villain deck'
-  assert.true(neutralCardEligibility, neutralCardMessage)
+  assert.true(
+    villainAffiliationTest(neutralCard),
+    'should accept a neutral card in a villain deck',
+  )
 
   const emptyDeck = []
   const emptyDeckAffiliationTest = createAffiliationTest(emptyDeck)
   const anyCard = { affiliation_code: 'anything!' }
-  const emptyDeckEligiblity = emptyDeckAffiliationTest(anyCard)
-  const emptyDeckMessage =
-    'should allow a card of any affiliation if the deck is empty'
-  assert.true(emptyDeckEligiblity, emptyDeckMessage)
+  assert.true(
+    emptyDeckAffiliationTest(anyCard),
+    'should allow a card of any affiliation if the deck is empty',
+  )
 
   assert.end()
 })
