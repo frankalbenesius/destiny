@@ -5,5 +5,6 @@ This is a pet project that aims to analyze some statistics about [Star Wars Dest
 ## To Run:
 
 1. Install dependencies: `yarn install`
-2. Run the app: `yarn run dev`
-3. Visit `localhost:3000`
+1. Build the static JSON files: `yarn sync`
+1. Run the app: `yarn dev`
+1. Visit `localhost:3000`
