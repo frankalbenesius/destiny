@@ -1,3 +1,3 @@
-import createDecks from './createDecks'
+import findDecks from './findDecks'
 
-export createDecks
+export findDecks
