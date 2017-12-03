@@ -1,17 +1,6 @@
 import test from 'tape'
 
-import createDecks, {
-  createFactionTest,
-  createAffiliationTest,
-  createBudgetTest,
-  createUniquenessTest,
-} from './createDecks'
-
-test('createDecks', assert => {
-  const isArray = Array.isArray(createDecks())
-  assert.true(isArray, 'should return an array')
-  assert.end()
-})
+import createAffiliationTest from './createAffiliationTest'
 
 test('createAffiliationTest', assert => {
   const villainDeck = [

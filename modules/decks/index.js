@@ -1,3 +1,3 @@
-import createDecks, { createEligibilityTest } from './createDecks'
+import createDecks from './createDecks'
 
 export createDecks
