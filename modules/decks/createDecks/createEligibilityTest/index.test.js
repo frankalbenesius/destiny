@@ -2,7 +2,7 @@ import test from 'tape'
 
 import createEligibilityTest from './'
 
-test('createEligibilityTest', assert => {
+test('createEligibilityTest: affiliations', assert => {
   const deck = [
     {
       affiliation_code: 'hero',

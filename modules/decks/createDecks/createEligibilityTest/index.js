@@ -1,11 +1,9 @@
 import createAffiliationTest from './createAffiliationTest'
-import createFactionTest from './createFactionTest'
 import createBudgetTest from './createBudgetTest'
 import createUniquenessTest from './createUniquenessTest'
 
 const createEligibilityTest = deck => {
   const testCreators = [
-    createFactionTest,
     createAffiliationTest,
     createBudgetTest,
     createUniquenessTest,
