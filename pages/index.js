@@ -1,39 +1,25 @@
 import React from 'react'
-
-import { fetchCharacters, getStoredCharacters } from '../modules/api'
+import { getJSON } from 'jquery'
 
 import Squad from '../components/Squad'
 import Wrapper from '../components/Wrapper'
 
 export default class IndexPage extends React.Component {
-  state = {
-    characters: [],
-    isFetching: true,
-  }
-  async componentDidMount() {
-    this.setState({
-      characters: getStoredCharacters() || [],
-    })
-    const characters = await fetchCharacters()
-    this.setState({
-      characters: characters,
-      isFetching: false,
+  state = {}
+  componentDidMount() {
+    getJSON('/static/squads.json', squads => {
+      this.setState({ squads })
     })
   }
   render() {
-    if (this.state.characters.length < 1) {
-      return (
-        <Wrapper>
-          <p>fetching cards...</p>
-        </Wrapper>
-      )
-    }
-    const squadA = this.state.characters.slice(0, 4)
-    const squadB = this.state.characters.slice(12, 14)
+    if (!this.state.squads) return null
     return (
       <Wrapper>
-        <Squad squad={squadA} />
-        <Squad squad={squadB} />
+        <h2>All 5 Dice Squads</h2>
+        <p>Sorted by Total Health</p>
+        {this.state.squads
+          .sort((a, b) => a.stats.health < b.stats.health)
+          .map(squad => <Squad squad={squad} />)}
       </Wrapper>
     )
   }

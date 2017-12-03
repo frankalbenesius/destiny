@@ -1,7 +1,15 @@
 import Card from '../Card'
+import colors from '../colors'
 
 export default ({ squad }) => (
   <div className="squad">
-    {squad.map(character => <Card card={character} />)}
+    {squad.characters.map(character => (
+      <Card key={character.customKey} card={character} />
+    ))}
+    <style jsx>{`
+      .squad {
+        margin-bottom: 1em;
+      }
+    `}</style>
   </div>
 )

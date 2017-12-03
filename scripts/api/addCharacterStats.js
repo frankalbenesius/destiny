@@ -20,8 +20,8 @@ export default function(card) {
   const diceDmgSum =
     card.sides.filter(isDamageSide).reduce(sumSides, 0) * card.dice
   return {
+    id: `${card.code}${card.is_elite ? 'e' : ''}`,
     ...card,
-    customKey: `${card.is_elite ? 'e' : ''}${card.code}`,
     stats: {
       hpp: perPoint(card.health),
       dpp: perPoint(card.dice),

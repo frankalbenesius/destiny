@@ -1,5 +1,6 @@
-.next
 node_modules
 package-lock.json
-.DS_Store
 yarn-error.log
+.DS_Store
+.scripts
+.next

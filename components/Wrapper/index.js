@@ -19,7 +19,6 @@ export default ({ children }) => (
         max-width: 600px;
         margin: 0 auto;
         text-align: center;
-        border: 1px solid ${colors.base};
       }
     `}</style>
   </div>

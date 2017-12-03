@@ -1,5 +1,7 @@
-import { sortBy, concat, uniqWith, isEqual } from 'lodash'
+import { sortBy, concat, uniqBy } from 'lodash'
 import createEligibilityTest from './createEligibilityTest'
+
+const printSquad = squad => squad.map(c => c.name).join(' | ')
 
 export default (characters = []) => {
   // expandSquad is a recursive function for finding all the character
@@ -14,7 +16,7 @@ export default (characters = []) => {
       // recursive case
       const newSquads = eligibleCharacters.map(character => {
         // keep squads sorted for easier deduplication later
-        return sortBy([...squad, character], ['name'])
+        return sortBy([...squad, character], ['points', 'name']).reverse()
       })
       const expandedSquads = newSquads
         .map(d => expandSquad(characters, d))
@@ -28,9 +30,7 @@ export default (characters = []) => {
   // rawSquads includes duplicate character combinations
   const rawSquads = expandSquad(characters, [])
 
-  const uniqueSquads = uniqWith(rawSquads, (a, b) => {
-    return isEqual(JSON.stringify(a), JSON.stringify(b))
-  })
+  const uniqueSquads = uniqBy(rawSquads, JSON.stringify)
 
   return uniqueSquads
 }
