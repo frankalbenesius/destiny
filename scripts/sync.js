@@ -13,7 +13,11 @@ function write(name, data) {
   })
 }
 
+const dir = './static'
 fetchCharacters().then(characters => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir)
+  }
   write('characters', characters)
   const byDiceTotal = (a, b) => a.dice > b.dice
   const squads = getSquads(characters)
