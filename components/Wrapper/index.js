@@ -14,7 +14,7 @@ export default class Wrapper extends React.Component {
     return (
       <div>
         <Head>
-          <title>SWD | 5-Die Squads</title>
+          <title>SWD | 5-Dice Squads</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
