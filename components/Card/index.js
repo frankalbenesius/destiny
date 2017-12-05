@@ -4,17 +4,21 @@ const Elite = () =>
     <style jsx>{`
       .wrapper {
         position: absolute;
-        bottom: 1.5em;
         width: 100%;
-        font-size: 1.2em;
+        font-size: 0.8em;
+        bottom: 0;
         text-align: center;
+      }
+      @media (min-width: 35em) {
+        .wrapper {
+          font-size: 1.2em;
+        }
       }
       .text {
         background: black;
         color: white;
-        padding: 0.2em 0.4em;
+        padding: 0.1em 0.4em 0em;
         opacity: 0.8;
-        border-radius: 0.4em;
       }
     `}</style>
   </div>
