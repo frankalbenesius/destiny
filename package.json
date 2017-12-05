@@ -5,11 +5,7 @@
   "author": "Frank Albenesius",
   "license": "MIT",
   "babel": {
-    "presets": [
-      "next/babel",
-      "es2015",
-      "stage-0"
-    ]
+    "presets": ["next/babel", "es2015", "stage-0"]
   },
   "dependencies": {
     "jquery": "^3.2.1",
