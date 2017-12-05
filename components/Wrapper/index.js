@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import colors from '../colors'
 
-export default ({ children }) => (
+export default ({ children }) =>
   <div>
     <Head>
-      <title>SWD Analysis</title>
+      <title>SWD | 5 Die Squads</title>
     </Head>
     {children}
     <style jsx global>{`
@@ -22,4 +22,3 @@ export default ({ children }) => (
       }
     `}</style>
   </div>
-)
