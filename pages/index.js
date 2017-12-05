@@ -16,7 +16,9 @@ export default class IndexPage extends React.Component {
     return (
       <Wrapper>
         <h2>All 5 Dice Squads</h2>
-        <p>Sorted by Total Health</p>
+        <p>
+          {this.state.squads.length} Squads Sorted by Total Health<br />
+        </p>
         {this.state.squads
           .sort((a, b) => a.stats.health < b.stats.health)
           .map((squad, i) => <Squad squad={squad} row={i} />)}

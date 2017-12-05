@@ -13,6 +13,7 @@ export default ({ children }) =>
     {children}
     <style jsx global>{`
       body {
+        font-size: 1.25em;
         font-family: monospace;
         color: ${colors.black};
         background: ${colors.gray[0]};
