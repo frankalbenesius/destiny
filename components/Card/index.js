@@ -25,13 +25,13 @@ export default ({ card }) =>
     <style jsx>{`
       .card {
         display: inline-block;
-        margin: 0.4em;
         position: relative;
+        width: 32%;
       }
       img {
         width: 100%;
-        max-width: 8em;
         display: block;
+        border-radius: 5%; // cuts off card corners
       }
       .point {
       }

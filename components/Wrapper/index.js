@@ -15,12 +15,14 @@ export default ({ children }) =>
       body {
         font-family: monospace;
         color: ${colors.black};
+        background: ${colors.gray[0]};
+        margin: 0;
       }
     `}</style>
     <style jsx>{`
       div {
         width: 100%;
-        max-width: 600px;
+        max-width: 50em;
         margin: 0 auto;
         text-align: center;
       }
