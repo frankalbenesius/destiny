@@ -23,7 +23,12 @@ export default class IndexPage extends React.Component {
           Made by <a href="https://albenesi.us">Frank Albenesius</a>
         </p>
         {this.state.squads
-          .sort((a, b) => a.stats.health < b.stats.health)
+          .sort((a, b) => {
+            if (a.stats.health !== b.stats.health) {
+              return b.stats.health > a.stats.health // by desc health
+            }
+            return b.id < a.id // by character ids
+          })
           .map((squad, i) => <Squad key={squad.id} squad={squad} row={i} />)}
       </Wrapper>
     )
