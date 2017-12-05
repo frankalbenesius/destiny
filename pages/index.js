@@ -15,13 +15,13 @@ export default class IndexPage extends React.Component {
     if (!this.state.squads) return null
     return (
       <Wrapper>
-        <h2>All 5 Dice Squads</h2>
+        <h2>5-Die Squads</h2>
         <p>
           {this.state.squads.length} Squads Sorted by Total Health<br />
         </p>
         {this.state.squads
           .sort((a, b) => a.stats.health < b.stats.health)
-          .map((squad, i) => <Squad squad={squad} row={i} />)}
+          .map((squad, i) => <Squad key={squad.id} squad={squad} row={i} />)}
       </Wrapper>
     )
   }
