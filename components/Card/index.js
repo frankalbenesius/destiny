@@ -1,4 +1,4 @@
-const Elite = () => (
+const Elite = () =>
   <div className="wrapper">
     <span className="text">ELITE</span>
     <style jsx>{`
@@ -17,9 +17,8 @@ const Elite = () => (
       }
     `}</style>
   </div>
-)
 
-export default ({ card }) => (
+export default ({ card }) =>
   <div className="card">
     <img src={card.imagesrc} />
     {card.is_elite ? <Elite /> : null}
@@ -38,4 +37,3 @@ export default ({ card }) => (
       }
     `}</style>
   </div>
-)

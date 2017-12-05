@@ -19,7 +19,7 @@ export default class IndexPage extends React.Component {
         <p>Sorted by Total Health</p>
         {this.state.squads
           .sort((a, b) => a.stats.health < b.stats.health)
-          .map(squad => <Squad squad={squad} />)}
+          .map(squad => <Squad key={squad.id} squad={squad} />)}
       </Wrapper>
     )
   }
